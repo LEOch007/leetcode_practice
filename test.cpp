@@ -4,16 +4,27 @@
 
 #include <iostream>
 #include <vector>
+#include <zconf.h>
+
 using namespace std;
 
+struct BNode{       // The Node of the Binary Tree
+    int data;
+    BNode *lchild;
+    BNode *rchild;
+};
+
 int main(){
-    vector<vector<int>> vec = {{1,2,3},{1},{}};    // initial vector
-    for (auto & v : vec){
-        cout << "[";
-        for(int j=0; j<v.size();j++){
-            cout << v[j];
-            if (j!=v.size()-1) cout<<" ";
-        }
-        cout<<"]"<<endl;
+    BNode *root = new BNode;
+    BNode *l = new BNode;
+    l->data = 5;
+    root->lchild = l;
+
+    cout<<root->data<<" "<<root->lchild->data<<endl;
+
+    int a[] = {1, 2, 3, -1};
+    for (int j = 0; j < 4; ++j) {
+        cout<<a[j]<<" ";
     }
+
 }
