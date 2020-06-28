@@ -3,15 +3,17 @@
 //
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main(){
-    string s1 = "aaa";
-    string s2 = "abaa";
-    cout<<"s1:"<<s1.length()<<" "<<typeid(s1.length()).name()<<endl;
-    cout<<"s2:"<<s2.length()<<" "<<typeid(s2.length()).name()<<endl;
-    cout<<s1.length()-s2.length()<<endl;
-    int len_s1 = s1.length();
-    int len_s2 = s2.length();
-    cout<<len_s1-len_s2<<endl;
+    vector<vector<int>> vec = {{1,2,3},{1},{}};    // initial vector
+    for (auto & v : vec){
+        cout << "[";
+        for(int j=0; j<v.size();j++){
+            cout << v[j];
+            if (j!=v.size()-1) cout<<" ";
+        }
+        cout<<"]"<<endl;
+    }
 }
