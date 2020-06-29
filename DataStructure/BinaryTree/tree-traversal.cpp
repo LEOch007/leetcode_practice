@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stack>
 using namespace std;
 
 struct BNode{       // The Node of the Binary Tree
@@ -61,7 +62,60 @@ public:
     }
 
     // non-recursive methods:
+    void pre_order(BNode* p){
+        if (p == nullptr) return;
 
+        stack<BNode*> stack_p;  // store the previous node pointer
+        while ((p!= nullptr)||(!stack_p.empty())){
+            while (p != nullptr){
+                cout<<p->data<<" ";
+                stack_p.push(p);
+                p = p->lchild;
+            }
+            p = stack_p.top();
+            stack_p.pop();
+            p = p->rchild;
+        }
+    }
+
+    void mid_order(BNode* p){
+        if (p == nullptr) return;
+
+        stack<BNode*> stack_p;  // store the previous node pointer
+        while ((p!= nullptr)||(!stack_p.empty())){
+            while (p != nullptr){
+                stack_p.push(p);
+                p = p->lchild;
+            }
+            p = stack_p.top();
+            stack_p.pop();
+            cout<<p->data<<" ";
+            p = p->rchild;
+        }
+    }
+
+    void post_order(BNode* p){
+        if (p == nullptr) return;
+
+        stack<BNode*> stack_p;      // store the previous node pointer
+        BNode* lastvisit = nullptr; // last visited node: determine whether right child has been visited
+        while ((p!= nullptr)||(!stack_p.empty())){
+            while (p != nullptr){
+                stack_p.push(p);
+                p = p->lchild;
+            }
+            p = stack_p.top();
+            // the visited right child is the same as null
+            if ((p->rchild == nullptr)||(p->rchild == lastvisit)){
+                cout<<p->data<<" ";
+                lastvisit = p;          // mark it as visited
+                stack_p.pop();
+                p = nullptr;            // important: can go back to the parent node
+            } else{
+                p = p->rchild;
+            }
+        }
+    }
 };
 
 int main(){
@@ -73,15 +127,24 @@ int main(){
     BTree bt;
     bt.construct_BT(bt.root, nums, 0);
 
-    cout<<"pre order: ";
+    cout<<"pre order (recursive): ";
     bt.pre_traversal(bt.root);
     cout<<endl;
-
-    cout<<"mid order: ";
-    bt.mid_traversal(bt.root);
+    cout<<"pre order (non-recursive): ";
+    bt.pre_order(bt.root);
     cout<<endl;
 
-    cout<<"post order: ";
+    cout<<"mid order (recursive): ";
+    bt.mid_traversal(bt.root);
+    cout<<endl;
+    cout<<"mid order (non-recursive): ";
+    bt.mid_order(bt.root);
+    cout<<endl;
+
+    cout<<"post order (recursive): ";
     bt.post_traversal(bt.root);
+    cout<<endl;
+    cout<<"post order (non-recursive): ";
+    bt.post_order(bt.root);
     cout<<endl;
 }
