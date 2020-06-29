@@ -9,3 +9,4 @@ add_executable(test test.cpp)
 add_executable(78-subset 78-subset.cpp)
 
 add_subdirectory(DataStructure)
+add_subdirectory(LeetcodeCard)

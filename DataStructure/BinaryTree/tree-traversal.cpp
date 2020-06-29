@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <stack>
+#include <queue>
 using namespace std;
 
 struct BNode{       // The Node of the Binary Tree
@@ -116,6 +117,27 @@ public:
             }
         }
     }
+
+    // BFS:
+    void BFS_BT(BNode* p){
+        if (p== nullptr) return;
+
+        queue<BNode*> queue_p;      // store the node in breadth-first order
+        queue_p.push(p);
+
+        while (!queue_p.empty()){
+            int queue_len = queue_p.size();         // the number of nodes in current level
+            for (int i = 0; i < queue_len; ++i) {
+                p = queue_p.front();
+                queue_p.pop();
+                cout<<p->data<<" ";
+
+                if (p->lchild != nullptr) queue_p.push(p->lchild);
+                if (p->rchild != nullptr) queue_p.push(p->rchild);
+            }
+            cout<<endl;
+        }
+    }
 };
 
 int main(){
@@ -146,5 +168,9 @@ int main(){
     cout<<endl;
     cout<<"post order (non-recursive): ";
     bt.post_order(bt.root);
+    cout<<endl;
+
+    cout<<"Breadth-first search: \n";
+    bt.BFS_BT(bt.root);
     cout<<endl;
 }
