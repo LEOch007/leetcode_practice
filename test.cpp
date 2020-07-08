@@ -9,12 +9,13 @@
 using namespace std;
 
 int main(){
-    vector<int> v;
-    v.push_back(1);
-    v.resize(1,0);
-    v.resize(2,0);
-    v[1]++;
-    v.resize(2,0);
-    v[1]++;
-    for (int num: v) cout<<num<<" ";
+    vector<int> v = {1,3,5,7,9};
+    int mid = v.size()/2;
+
+    vector<int> tmp (v.begin(),v.begin()+mid);
+    vector<int> tmp1 (v.begin()+mid,v.end());
+
+    for (int num: tmp) cout<<num<<" ";
+    cout<<endl;
+    for (int num: tmp1) cout<<num<<" ";
 }
