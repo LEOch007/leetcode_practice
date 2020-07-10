@@ -97,10 +97,12 @@ int main(){
     //vector<int> nums = {2,4,-7,8,3,1,2,-7};
     vector<int> nums = {2,2,-4,2,2,3,5,1,2,2,2,1};
 
+    cout<<"Merge Sort:\n";
     vector<int> result = MergeSort(nums);
     for(int n: result) cout<<n<<" ";
     cout<<endl;
 
+    cout<<"Quick Sort:\n";
     QuickSort(nums,0,nums.size()-1);
     for(int n: nums) cout<<n<<" ";
     cout<<endl;
