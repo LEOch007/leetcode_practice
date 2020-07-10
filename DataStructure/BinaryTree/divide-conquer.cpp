@@ -60,12 +60,48 @@ vector<int> MergeSort(vector<int> nums){
     return result;
 }
 
+int Partition(vector<int> &nums, int start, int end){
+    // 随机选择pivot
+    int pos = start + (rand()%(end+1-start));   // select the index from [start, end]
+    int pivot = nums[pos];
+    swap(nums[start], nums[pos]);
+
+    // 按pivot的大小分左右两边
+    int i = start; int j = end+1;
+    while (true){
+        while ((nums[++i]<pivot) && (i!=end));
+        while ((nums[--j]>pivot) && (j!=start));
+        if (i>=j) { break;}
+        swap(nums[i],nums[j]);
+    }
+    swap(nums[start],nums[j]);
+    return j;
+}
+
+void QuickSort(vector<int> &nums, int start, int end){
+    // 递归返回条件
+    if (start >= end) return;
+
+    // 分段处理
+    int idx = Partition(nums, start,end);
+    QuickSort(nums, start,idx-1);   // left part: < pivot
+    QuickSort(nums, idx+1,end);    // right part: > pivot
+
+    // 直接对传入数组操作 原地排序 不需另外合并
+}
+
 int main(){
+    srand(time(nullptr));
     //vector<int> nums = {2,4,-77,8,3,1};
-    vector<int> nums = {24,-2,3,6,8,5,1,-12,9,88,4};
+    //vector<int> nums = {24,-2,3,6,8,5,1,-12,9,88,4};
+    //vector<int> nums = {2,4,-7,8,3,1,2,-7};
+    vector<int> nums = {2,2,-4,2,2,3,5,1,2,2,2,1};
 
     vector<int> result = MergeSort(nums);
     for(int n: result) cout<<n<<" ";
+    cout<<endl;
 
-
+    QuickSort(nums,0,nums.size()-1);
+    for(int n: nums) cout<<n<<" ";
+    cout<<endl;
 }

@@ -18,4 +18,11 @@ int main(){
     for (int num: tmp) cout<<num<<" ";
     cout<<endl;
     for (int num: tmp1) cout<<num<<" ";
+    cout<<"\n"<<endl;
+
+    srand(time(nullptr));
+    for (int i = 0; i < 5; ++i) {
+        cout<<rand()%5<<" ";
+    }
+
 }
