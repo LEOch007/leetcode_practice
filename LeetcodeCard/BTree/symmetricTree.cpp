@@ -50,15 +50,34 @@ struct TreeNode {
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
-        vector<vector<int>> result = BFS(root);
+        return double_direction_BFS(root);
+    }
 
-        for (vector<int> v:result) {
-            int i = 0; int j = v.size()-1;
-            while (i<j){
-                if (v[i]!=v[j]) return false;
-                i++;
-                j--;
-            }
+    bool double_pointer_traversal(TreeNode* p, TreeNode* q){
+
+    }
+
+    bool double_direction_BFS(TreeNode* root){
+        if (root == nullptr) return true;
+
+        queue<TreeNode*> queue_p, queue_q;
+        queue_p.push(root);
+        queue_q.push(root);
+
+        while ((!queue_p.empty())&&(!queue_q.empty())){
+            TreeNode* p = queue_p.front();
+            queue_p.pop();
+            TreeNode* q = queue_q.front();
+            queue_q.pop();
+
+            if ((p== nullptr)&&(q== nullptr)) continue;
+            if ((p== nullptr)||(q== nullptr)||(p->val!=q->val)){ return false;}
+
+            queue_p.push(p->left);
+            queue_p.push(p->right);
+
+            queue_q.push(q->right);
+            queue_q.push(q->left);
         }
         return true;
     }
