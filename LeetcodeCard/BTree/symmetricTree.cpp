@@ -135,3 +135,9 @@ int main(){
         cout<<endl;
     }
 }
+
+/*
+ * Notes:
+ *
+ * Double pointer
+ */
