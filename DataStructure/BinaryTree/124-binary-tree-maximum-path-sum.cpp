@@ -51,7 +51,37 @@ struct TreeNode {
 
 class Solution {
 public:
-    int maxPathSum(TreeNode* root) {
+    int global_pathsum;
 
+    int maxPathSum(TreeNode* root) {
+        global_pathsum = root->val;
+        nodePathSum(root);
+        return global_pathsum;
+    }
+
+    // the return value indicates the maximum path sum going through the node p
+    int nodePathSum(TreeNode* p){
+        if (p == nullptr) return INT_MIN;
+
+        long left_sum = nodePathSum(p->left);
+        long right_sum = nodePathSum(p->right);
+
+        // max path sum going through the node p
+        int node_pathsum = max((long)p->val, max(p->val+left_sum, p->val+right_sum));
+
+        // "locally" max path sum among the subtree rooted at node p
+        int local_pathsum = max((long)p->val,max(p->val+left_sum, max(p->val+right_sum,
+                        max(p->val+left_sum+right_sum, max(left_sum,right_sum)))));
+        // "globally" max path sum recoed
+        global_pathsum = max(global_pathsum, local_pathsum);
+
+        return node_pathsum;
     }
 };
+
+/*
+ * Note:
+ *
+ * bottom-up thinking
+ * global recording
+ */
