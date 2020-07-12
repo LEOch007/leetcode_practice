@@ -50,13 +50,22 @@ struct TreeNode {
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
-        return double_direction_BFS(root);
+        return double_pointer_traversal(root,root);
     }
 
+    // recursive methods
     bool double_pointer_traversal(TreeNode* p, TreeNode* q){
+        if ((p == nullptr) && (q == nullptr)) return true;
+        if ((p == nullptr) || (q == nullptr)) return false;
 
+        if (p->val != q->val) return false;
+        if (!double_pointer_traversal(p->left,q->right)) return false;
+        if (!double_pointer_traversal(p->right,q->left)) return false;
+
+        return true;
     }
 
+    // non-recursive methods
     bool double_direction_BFS(TreeNode* root){
         if (root == nullptr) return true;
 
