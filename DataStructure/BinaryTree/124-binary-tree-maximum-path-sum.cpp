@@ -55,7 +55,7 @@ public:
 
     int maxPathSum(TreeNode* root) {
         global_pathsum = root->val;
-        nodePathSum(root);
+        nodePathSum_simple(root);
         return global_pathsum;
     }
 
@@ -76,6 +76,21 @@ public:
         global_pathsum = max(global_pathsum, local_pathsum);
 
         return node_pathsum;
+    }
+
+    // the same idea as the above function but with simplified implementation
+    int nodePathSum_simple(TreeNode* p){
+        if (p == nullptr) return 0;
+
+        int left_gain  = max(nodePathSum_simple(p->left),0);    // don't need negative gain
+        int right_gain = max(nodePathSum_simple(p->right),0);   // don't need negative gain
+
+        int node_gain = p->val + max(left_gain,right_gain);
+
+        int local_pathsum = p->val + left_gain + right_gain;    // max(left_gain,right_gain) already computed
+        global_pathsum = max(global_pathsum,local_pathsum);
+
+        return node_gain;
     }
 };
 
