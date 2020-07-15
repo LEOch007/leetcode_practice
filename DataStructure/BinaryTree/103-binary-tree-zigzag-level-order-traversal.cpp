@@ -3,22 +3,22 @@
 //
 
 /*
- * 给定一个二叉树，返回其节点值自底向上的层次遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）
+ * 给定一个二叉树，返回其节点值的锯齿形层次遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
 
 例如：
-给定二叉树 [3,9,20,null,null,15,7],
+给定二叉树 [3,9,20,null,null,15,7],
 
     3
    / \
   9  20
     /  \
    15   7
-返回其自底向上的层次遍历为：
+返回锯齿形层次遍历如下：
 
 [
-  [15,7],
-  [9,20],
-  [3]
+  [3],
+  [20,9],
+  [15,7]
 ]
 
  */
@@ -45,18 +45,14 @@ struct TreeNode {
 
 class Solution {
 public:
-    vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        vector<vector<int>> result = BFS_traversal(root);
-        return result;
-    }
-
-    vector<vector<int>> BFS_traversal(TreeNode* root){
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
         vector<vector<int>> result;
         if (root == nullptr) return result;
 
         queue<TreeNode*> queue_p;
         queue_p.push(root);
 
+        bool gate = true;              // gate indicates the direction; true: left -> right
         while (!queue_p.empty()){
             vector<int> temp;
             int queue_len = queue_p.size();
@@ -68,7 +64,12 @@ public:
                 if (p->left!= nullptr) queue_p.push(p->left);
                 if (p->right!= nullptr) queue_p.push(p->right);
             }
-            result.insert(result.begin(),temp);
+            if (gate){ result.push_back(temp); }
+            else {
+                vector<int> temp2 (temp.rbegin(),temp.rend());
+                result.push_back(temp2);
+            }
+            gate = !gate;
         }
 
         return result;
@@ -78,6 +79,6 @@ public:
 /*
  * Note:
  *
- * the node numbers in each layer can be obtained from
- * the size of queue before putting nodes of next layer in queue.
+ * Using a boolean gate to determine the direction,
+ * Using the vector's rbegin & rend to reverse the direction
  */

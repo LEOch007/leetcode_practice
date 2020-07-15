@@ -8,3 +8,4 @@ add_executable(124-binary-tree-maximum-path-sum BinaryTree/124-binary-tree-maxim
 add_executable(236-lowest-common-ancestor-of-a-binary-tree BinaryTree/236-lowest-common-ancestor-of-a-binary-tree.cpp)
 add_executable(102-binary-tree-level-order-traversal BinaryTree/102-binary-tree-level-order-traversal.cpp)
 add_executable(107-binary-tree-level-order-traversal-ii BinaryTree/107-binary-tree-level-order-traversal-ii.cpp)
+add_executable(103-binary-tree-zigzag-level-order-traversal BinaryTree/103-binary-tree-zigzag-level-order-traversal.cpp)

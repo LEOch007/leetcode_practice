@@ -9,7 +9,9 @@
 using namespace std;
 
 int main(){
-    cout<<INT_MIN<<endl;
-    cout<<INT_MAX<<endl;
+    vector<int> v = {3,4,5,6};
+    vector<int> temp (v.rbegin(),v.rend());
 
+    for(auto num:temp) cout<<num<<" ";
+    cout<<endl;
 }

@@ -75,3 +75,10 @@ public:
         return result;
     }
 };
+
+/*
+ * Note:
+ *
+ * the node numbers in each layer can be obtained from
+ * the size of queue before putting nodes of next layer in queue.
+ */
