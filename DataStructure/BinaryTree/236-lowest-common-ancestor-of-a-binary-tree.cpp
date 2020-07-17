@@ -87,3 +87,19 @@ public:
  * Note:
  * Divide and Conquer
  */
+
+int main(){
+    int nums[] = {3,5,1,6,2,0,8,-1,-1,7,4};
+    TreeNode* pnums[11];
+    for (int i = 0; i < 11; ++i) {
+        if (nums[i] == -1) { pnums[i] = nullptr; }
+        else{ pnums[i] = new TreeNode(nums[i]); }
+    }
+    for (int i = 0; i < 11; ++i) {
+        if (2*i+1<11) pnums[i]->left = pnums[2*i+1];
+        if (2*i+2<11) pnums[i]->right = pnums[2*i+2];
+    }
+
+    Solution s;
+    s.lowestCommonAncestor(pnums[0],pnums[1],pnums[6]);
+}
