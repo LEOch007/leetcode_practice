@@ -49,3 +49,10 @@ public:
         return head;
     }
 };
+
+/*
+ * Note:
+ *
+ * A->B->C 删除 B，A->next = C
+ * 访问 X.val, X.next 一定要保证: X不是nullptr
+ */

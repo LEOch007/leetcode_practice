@@ -13,6 +13,9 @@ add_executable(103-binary-tree-zigzag-level-order-traversal BinaryTree/103-binar
 add_executable(98-validate-binary-search-tree BinaryTree/98-validate-binary-search-tree.cpp)
 add_executable(701-insert-into-a-binary-search-tree BinaryTree/701-insert-into-a-binary-search-tree.cpp)
 
+
 add_executable(List_Key LinkedList/List_Key.cpp)
 add_executable(83-remove-duplicates-from-sorted-list LinkedList/83-remove-duplicates-from-sorted-list.cpp)
 add_executable(82-remove-duplicates-from-sorted-list-ii LinkedList/82-remove-duplicates-from-sorted-list-ii.cpp)
+add_executable(206-reverse-linked-list LinkedList/206-reverse-linked-list.cpp)
+add_executable(92-reverse-linked-list-ii LinkedList/92-reverse-linked-list-ii.cpp)

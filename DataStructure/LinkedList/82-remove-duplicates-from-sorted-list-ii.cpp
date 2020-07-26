@@ -59,3 +59,9 @@ public:
     }
 
 };
+
+/*
+ * Note:
+ *
+ * 当头节点可变或可能被delete时，需引入dummy node
+ */
