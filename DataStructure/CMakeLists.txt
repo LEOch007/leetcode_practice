@@ -15,3 +15,4 @@ add_executable(701-insert-into-a-binary-search-tree BinaryTree/701-insert-into-a
 
 add_executable(List_Key LinkedList/List_Key.cpp)
 add_executable(83-remove-duplicates-from-sorted-list LinkedList/83-remove-duplicates-from-sorted-list.cpp)
+add_executable(82-remove-duplicates-from-sorted-list-ii LinkedList/82-remove-duplicates-from-sorted-list-ii.cpp)
