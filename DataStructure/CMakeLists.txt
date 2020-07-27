@@ -22,3 +22,4 @@ add_executable(92-reverse-linked-list-ii LinkedList/92-reverse-linked-list-ii.cp
 add_executable(21-merge-two-sorted-lists LinkedList/21-merge-two-sorted-lists.cpp)
 add_executable(86-partition-list LinkedList/86-partition-list.cpp)
 add_executable(148-sort-list LinkedList/148-sort-list.cpp)
+add_executable(143-reorder-list LinkedList/143-reorder-list.cpp)
