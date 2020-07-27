@@ -20,3 +20,4 @@ add_executable(82-remove-duplicates-from-sorted-list-ii LinkedList/82-remove-dup
 add_executable(206-reverse-linked-list LinkedList/206-reverse-linked-list.cpp)
 add_executable(92-reverse-linked-list-ii LinkedList/92-reverse-linked-list-ii.cpp)
 add_executable(21-merge-two-sorted-lists LinkedList/21-merge-two-sorted-lists.cpp)
+add_executable(86-partition-list LinkedList/86-partition-list.cpp)
