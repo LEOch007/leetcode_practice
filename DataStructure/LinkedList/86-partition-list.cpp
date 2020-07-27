@@ -33,7 +33,7 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode* partition(ListNode* head, int x) {
+    ListNode* partition0(ListNode* head, int x) {
         if (head == nullptr) return head;
 
         ListNode* dummy = new ListNode(INT_MIN);
@@ -74,11 +74,65 @@ public:
         }
         return dummy->next;
     }
+
+    // another way to solve this same problem
+    ListNode* partition(ListNode* head, int x){
+        if ((head == nullptr) || (head->next == nullptr)) return head;
+
+        ListNode* dummy = new ListNode(-1);
+        dummy->next = head;
+
+        ListNode* bigList_dummy = new ListNode(-2);    // stores the element >= x
+        ListNode* bigList_curr = bigList_dummy;
+
+        ListNode* prev = dummy;
+        ListNode* curr = dummy->next;
+        while ((curr != nullptr) && (bigList_curr != nullptr)){
+            if (curr->val >= x){
+                prev->next = curr->next;
+                bigList_curr->next = curr;
+                // move on
+                curr = curr->next;
+                bigList_curr = bigList_curr->next;
+            } else{
+                prev = curr;
+                curr = curr->next;
+            }
+        }
+        bigList_curr->next = nullptr;       // Give an end node to this big list
+        prev->next = bigList_dummy->next;
+        return dummy->next;
+    }
 };
+
+int main(){
+    int nums[] = {1,4,3,2,5,2};
+    int x = 3;
+    int size = 6;
+
+    // construct a list
+    ListNode* parray[size];
+    for (int i = 0; i < size; ++i) {
+        parray[i] = new ListNode(nums[i]);
+    }
+    for (int j = 0; j < size-1; ++j) {
+        parray[j]->next = parray[j+1];
+    }
+
+    Solution s;
+    ListNode* head = s.partition(parray[0],x);
+    while (head != nullptr){
+        cout<<head->val<<" ";
+        head = head->next;
+    }
+
+}
 
 /*
  * Note:
  *
  * 当dummy node参与比较大小时，要确保它的大小不影响正常程序，如这里设置为INI_MIN。
  * 另一种方法是避免dummy node参与比较大小，先move on到它的下一节点开始正常程序。
+ *
+ * 此外，多创一条链表连接数据时，要注意该链表的终结点，往往需要显式地添加终结点nullptr
  */
