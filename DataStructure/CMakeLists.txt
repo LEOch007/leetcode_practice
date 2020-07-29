@@ -9,7 +9,6 @@ add_executable(236-lowest-common-ancestor-of-a-binary-tree BinaryTree/236-lowest
 add_executable(102-binary-tree-level-order-traversal BinaryTree/102-binary-tree-level-order-traversal.cpp)
 add_executable(107-binary-tree-level-order-traversal-ii BinaryTree/107-binary-tree-level-order-traversal-ii.cpp)
 add_executable(103-binary-tree-zigzag-level-order-traversal BinaryTree/103-binary-tree-zigzag-level-order-traversal.cpp)
-
 add_executable(98-validate-binary-search-tree BinaryTree/98-validate-binary-search-tree.cpp)
 add_executable(701-insert-into-a-binary-search-tree BinaryTree/701-insert-into-a-binary-search-tree.cpp)
 
@@ -25,3 +24,4 @@ add_executable(148-sort-list LinkedList/148-sort-list.cpp)
 add_executable(143-reorder-list LinkedList/143-reorder-list.cpp)
 add_executable(141-linked-list-cycle LinkedList/141-linked-list-cycle.cpp)
 add_executable(142-linked-list-cycle-ii LinkedList/142-linked-list-cycle-ii.cpp)
+add_executable(234-palindrome-linked-list LinkedList/234-palindrome-linked-list.cpp)
