@@ -2,6 +2,12 @@
 // Created by linjliang on 2020/7/31.
 //
 
+/*
+ * 给定两个矩形对角线的两个顶点坐标，
+ * 判断俩矩形是否相交
+ */
+
+// Unsure
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -23,10 +29,10 @@ int main(){
     long long xxmax = max(xx2,xx1); long long xxmin = min(xx2,xx1);
     long long yymax = max(yy2,yy1); long long yymin = min(yy2,yy1);
 
-    if ((ymin > yymax)|| ((ymin==yymax)&&(yymax!=yymin))) ans = false;
-    else if ((ymax < yymin)|| ((ymax == yymin)&&(yymax!=yymin))) ans = false;
-    else if ((xmin > xxmax)|| ((xmin == xxmax)&&(xxmax!=xxmin))) ans = false;
-    else if ((xmax < xxmin)|| ((xmax == xxmin)&&(xxmax!=xxmin))) ans = false;
+    if (ymin > yymax) ans = false;
+    else if (ymax < yymin) ans = false;
+    else if (xmin > xxmax) ans = false;
+    else if (xmax < xxmin) ans = false;
 
     cout<<ans<<endl;
 }

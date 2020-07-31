@@ -2,6 +2,11 @@
 // Created by linjliang on 2020/7/31.
 //
 
+/*
+ * 手写快排：每一次划分后都输出
+ */
+
+// Sure
 #include <iostream>
 #include <vector>
 using namespace std;

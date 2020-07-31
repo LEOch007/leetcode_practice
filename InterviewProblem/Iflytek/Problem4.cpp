@@ -2,6 +2,11 @@
 // Created by linjliang on 2020/7/31.
 //
 
+/*
+ * 从字符串中提取整数
+ */
+
+// Unsure
 #include <iostream>
 #include <vector>
 #include <string>
@@ -17,10 +22,6 @@ int main(){
     for (int i = 0; i < str.size(); ++i) {
         if ((str[i]=='-')&&(!beg)){ neg = true; }
         else if ((str[i] >= '0') && (str[i]<='9')){
-            if (num>INT_MAX) {
-                num = 0;
-                break;
-            }
             num *= 10;
             num += str[i]-'0';
             beg = true;
