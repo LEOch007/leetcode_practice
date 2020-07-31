@@ -25,6 +25,7 @@
 
  */
 
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -48,14 +49,35 @@ public:
         return nums.size()+1;
     }
 
-    // O(1) space: Hashing into itself by swapping
+    // O(1) space: Hashing into itself via index
     int firstMissingPositive(vector<int>& nums) {
+        // Negative value should be saved for Hash Mark
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i]<=0) nums[i] = nums.size()+1;
+        }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            int abs_num = abs(nums[i]);
+            if ((abs_num>0)&&(abs_num<=nums.size())){
+                int idx = abs_num-1;
+                if (nums[idx]>0) nums[idx] = -nums[idx];
+            }
+        }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i]>=0) return i+1;
+        }
+        return nums.size()+1;
+    }
+
+    // O(1) space: Continuous Region Sorting by swapping
+    int firstMissingPositive2(vector<int>& nums) {
         if (nums.size() == 0) return 1;
 
         for (int i = 0; i < nums.size(); ) {
             if ((nums[i]>0) && (nums[i]<=nums.size())) {
                 int idx = nums[i]-1;
-                if (i!=idx) swap(nums[i],nums[idx]);
+                if (nums[i]!=nums[idx]) swap(nums[i],nums[idx]);
                 else i++;
             } else{
                 i++;
@@ -63,10 +85,27 @@ public:
         }
 
         for (int i = 0; i < nums.size(); ++i) {
-            if ((nums[i]<=0) || (nums[i]>nums.size())){
+            if (nums[i] != i+1){
                 return i+1;
             }
         }
         return nums.size()+1;
     }
 };
+
+int main(){
+    vector<int> nums = {1,1};
+
+    Solution s;
+    cout<<s.firstMissingPositive(nums)<<endl;
+}
+
+/*
+ * Note:
+ *
+ * 利用哈希表，一般可通过O(n)时间高效地处理问题，但会引入O(n)空间，
+ * 而原地哈希的思想，可以降为O(1)常数空间复杂度
+ *
+ * 利用排序来解决问题，一般需要O(nlogn)时间来完成排序的操作，
+ * 但针对于连续区间的排序，即该区间内，数据是连续不断开的，可通过交换至其对应位置的方式实现，只需O(n)时间复杂度
+ */
