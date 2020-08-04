@@ -6,3 +6,4 @@ add_executable(35-search-insert-position BinarySearch/35-search-insert-position.
 add_executable(74-search-a-2d-matrix BinarySearch/74-search-a-2d-matrix.cpp)
 add_executable(278-first-bad-version BinarySearch/278-first-bad-version.cpp)
 add_executable(153-find-minimum-in-rotated-sorted-array BinarySearch/153-find-minimum-in-rotated-sorted-array.cpp)
+add_executable(154-find-minimum-in-rotated-sorted-array-ii BinarySearch/154-find-minimum-in-rotated-sorted-array-ii.cpp)
