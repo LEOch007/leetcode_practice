@@ -29,7 +29,7 @@ using namespace std;
 
 class Solution {
 public:
-    int findMin(vector<int>& nums) {
+    int findMin0(vector<int>& nums) {
         if (nums.size() == 0) return -1;
 
         int i = 0;
@@ -44,6 +44,22 @@ public:
                 return nums[mid];
         }
         return min(nums[0],nums[nums.size()-1]);
+    }
+
+    // 更优雅通用的解法，把数组最后一个数当成target
+    int findMin(vector<int>& nums) {
+        if (nums.size() == 0) return -1;
+
+        int i = 0;
+        int j = nums.size()-1;
+        while (i+1<j){
+            int mid = (i+j)/2;
+            if (nums[mid]<=nums[j])
+                j = mid;
+            else
+                i = mid;
+        }
+        return min(nums[i],nums[j]);
     }
 };
 

@@ -35,7 +35,7 @@ public:
         return idx_min;
     }
 
-    int findMin(vector<int>& nums) {
+    int findMin0(vector<int>& nums) {
         if (nums.size() == 0) return -1;
         else if (nums.size() == 1) return nums[0];
 
@@ -60,6 +60,25 @@ public:
         }
         return nums[mid];
     }
+
+    // 更优雅通用的解法，把数组最后一个数当成target
+    int findMin(vector<int>& nums) {
+        if (nums.size() == 0) return -1;
+
+        int i = 0;
+        int j = nums.size()-1;
+        while (i+1<j){
+            while (i<j && nums[j]==nums[j-1]) j--;
+            while (i<j && nums[i]==nums[i+1]) i++;
+
+            int mid = (i+j)/2;
+            if (nums[mid]<=nums[j])
+                j = mid;
+            else
+                i = mid;
+        }
+        return min(nums[i],nums[j]);
+    }
 };
 
 /*
@@ -67,9 +86,19 @@ public:
  *
  * 这道题属于困难题，比起Leetcode 153的题，区别在于可以有重复元素；
  *
+ * 方法一：
  * 处理的思路为引入两个指针i、j，i永远指向未旋转过的上升序列，j指向旋转后的上升序列，
- * 直到它们相遇，i即指向未旋转过的序列尾，j即指向旋转过的序列头，此时j指向的数即为全局最小值
+ * 直到它们相邻，i即指向未旋转过的序列尾，j即指向旋转过的序列头，此时j指向的数即为全局最小值
  *
  * 特别之处在于重复元素，当i、j、mid指向的数值相同时，难以区分mid处于两种序列的哪一个，
  * 此时只能遍历i、j之间的数组元素，去找到最小值
+ *
+ * -------------------------------------------------------------------------
+ *
+ * 方法二：更优雅
+ * 同样引入两个指针i、j，i永远指向未旋转过的上升序列，j指向旋转后的上升序列，
+ * 将数组最后一个数当成target，去判断mid是处于哪个序列
+ * 直到它们相邻，i即指向未旋转过的序列尾，j即指向旋转过的序列头，此时返回俩者中的最小值（更通用
+ *
+ * 对重复数值的特别处理是：跳过重复数字，然后回归到熟悉的问题，较为巧妙
  */
