@@ -11,3 +11,4 @@ add_executable(33-search-in-rotated-sorted-array BinarySearch/33-search-in-rotat
 add_executable(81-search-in-rotated-sorted-array-ii BinarySearch/81-search-in-rotated-sorted-array-ii.cpp)
 
 add_executable(Sort_Key SortAlgorithm/Sort_Key.cpp)
+add_executable(Sort_Algorithms SortAlgorithm/Sort_Algorithms.cpp)
