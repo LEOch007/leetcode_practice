@@ -9,3 +9,5 @@ add_executable(153-find-minimum-in-rotated-sorted-array BinarySearch/153-find-mi
 add_executable(154-find-minimum-in-rotated-sorted-array-ii BinarySearch/154-find-minimum-in-rotated-sorted-array-ii.cpp)
 add_executable(33-search-in-rotated-sorted-array BinarySearch/33-search-in-rotated-sorted-array.cpp)
 add_executable(81-search-in-rotated-sorted-array-ii BinarySearch/81-search-in-rotated-sorted-array-ii.cpp)
+
+add_executable(Sort_Key SortAlgorithm/Sort_Key.cpp)
