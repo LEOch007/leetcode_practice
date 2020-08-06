@@ -89,6 +89,49 @@ public:
         QuickSortCore(nums, 0, nums.size()-1);
         return nums;
     }
+
+private:
+    /*
+     * 堆排序 整体复杂度： 时间O(nlogn) 空间O(1)
+     * 分为两个步骤：
+     * 第一步 构建大顶堆
+     * - 其中从 len/2-1 个节点开始维持大顶堆的特性 是因为后面的均为叶子节点，不必考虑
+     * 第二步 利用大顶堆排序
+     * - 每次将堆顶最大值放置末端，缩小堆长度-1，重新维持大顶堆
+     */
+    void HeapMaintain(vector<int> &nums, int start, int len){
+        if (len<=1) return;
+
+        while (true){
+            int left = 2*start+1;
+            int right = 2*start+2;
+            int bigIdx = start;
+
+            if (left<len && nums[left] > nums[bigIdx]) bigIdx = left;
+            if (right<len && nums[right] > nums[bigIdx]) bigIdx = right;
+
+            if (bigIdx == start) { break; }
+            else{
+                swap(nums[bigIdx],nums[start]);
+                start = bigIdx;
+            }
+        }
+    }
+
+public:
+    vector<int> HeapSort(vector<int> nums){
+        // 构建大顶堆
+        for (int start=nums.size()/2-1; start>=0 ; start--) {
+            HeapMaintain(nums, start, nums.size());
+        }
+
+        // 利用大顶堆排序
+        for (int len=nums.size()-1; len>=1 ; len--) {
+            swap(nums[0],nums[len]);
+            HeapMaintain(nums, 0, len);
+        }
+        return nums;
+    }
 };
 
 int main(){
@@ -103,4 +146,7 @@ int main(){
     for(auto num:result) cout<<num<<" ";
     cout<<endl;
 
+    result = sa.HeapSort(nums);
+    for(auto num:result) cout<<num<<" ";
+    cout<<endl;
 }
