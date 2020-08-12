@@ -10,18 +10,10 @@
 using namespace std;
 
 int main(){
-    vector<vector<int>> tmp = {};
-    vector<int> t1 = {1};
-    vector<int> t2 = {4,5};
-    vector<int> t3 = {21,4,8};
-    tmp.push_back(t1);
-    tmp.push_back(t2);
-    tmp.push_back(t3);
+    int a = 1;
+    int &a_ = a;
+    cout<<a_<<endl;
 
-    vector<vector<int>> triangle = {{-1},{-2,-3}};
-
-    for(auto v:triangle) {
-        for (auto num:v) cout << num << " ";
-        cout<<endl;
-    }
+    a = 2;
+    cout<<a_<<endl;
 }
