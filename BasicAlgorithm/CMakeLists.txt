@@ -15,3 +15,4 @@ add_executable(Sort_Algorithms SortAlgorithm/Sort_Algorithms.cpp)
 
 add_executable(DP_Key DynamicProgramming/DP_Key.cpp)
 add_executable(120-triangle DynamicProgramming/120-triangle.cpp)
+add_executable(64-minimum-path-sum DynamicProgramming/64-minimum-path-sum.cpp)
