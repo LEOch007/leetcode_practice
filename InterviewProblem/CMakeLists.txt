@@ -14,3 +14,6 @@ add_executable(NProblem1 NetEase/NProblem1.cpp)
 add_executable(NProblem2 NetEase/NProblem2.cpp)
 add_executable(NProblem3 NetEase/NProblem3.cpp)
 add_executable(NProblem4 NetEase/NProblem4.cpp)
+
+add_executable(Test1 Ctrip/Test1.cpp)
+add_executable(Test2 Ctrip/Test2.cpp)
