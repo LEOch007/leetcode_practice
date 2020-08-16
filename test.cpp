@@ -9,11 +9,12 @@
 
 using namespace std;
 
-int main(){
-    int a = 1;
-    int &a_ = a;
-    cout<<a_<<endl;
+struct S{
+    float f1;
+    char c;
+    float f2;
+};
 
-    a = 2;
-    cout<<a_<<endl;
+int main(){
+    cout<<"size: "<<sizeof(S)<<endl;
 }

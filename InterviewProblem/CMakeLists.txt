@@ -20,3 +20,7 @@ add_executable(Test2 Ctrip/Test2.cpp)
 add_executable(Test3 Ctrip/Test3.cpp)
 add_executable(CProblem1 Ctrip/CProblem1.cpp)
 add_executable(CProblem2 Ctrip/CProblem2.cpp)
+
+add_executable(DProblem1 DJI/DProblem1.cpp)
+add_executable(DProblem2 DJI/DProblem2.cpp)
+add_executable(DProblem3 DJI/DProblem3.cpp)

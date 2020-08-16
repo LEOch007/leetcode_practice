@@ -2,6 +2,13 @@
 // Created by linjliang on 2020/8/15.
 //
 
+/*
+ * 有长度为a和b的两种瓷砖，一共打算用k块，问有哪些长度情况？
+ * 如：输入 a=1 b=2 k=3
+ * 输出 [3,4,5,6]
+ * （ 可以3块a、2块a1块b、1块a2块b、3块b ）
+ */
+
 // Sure
 
 #include <iostream>
