@@ -38,6 +38,9 @@
 
  */
 
+#include <vector>
+using namespace std;
+
 class Solution {
 public:
     int uniquePaths(int m, int n) {
@@ -47,7 +50,8 @@ public:
         // state
         int& rows = n;
         int& cols = m;
-        int dp[rows][cols];
+        vector<vector<int>> dp(rows, vector<int>(cols));
+        // int dp[rows][cols];
 
         // initialize
         for (int i = 0; i < rows; ++i) { dp[i][0] = 1;}

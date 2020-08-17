@@ -43,7 +43,8 @@ public:
         // state
         int rows = obstacleGrid.size();
         int cols = obstacleGrid[0].size();
-        int dp[rows][cols];
+        vector<vector<int>> dp(rows, vector<int>(cols));
+        // int dp[rows][cols];
 
         // initial
         dp[0][0] = obstacleGrid[0][0]==1 ? 0:1;

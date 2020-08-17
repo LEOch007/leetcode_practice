@@ -32,7 +32,8 @@ public:
         // state
         int rows = grid.size();
         int cols = grid[0].size();
-        int dp[rows][cols];
+        vector<vector<int>> dp(rows, vector<int>(cols));
+        // int dp[rows][cols];
 
         // initialize
         dp[0][0] = grid[0][0];
