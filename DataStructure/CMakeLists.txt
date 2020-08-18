@@ -26,3 +26,6 @@ add_executable(141-linked-list-cycle LinkedList/141-linked-list-cycle.cpp)
 add_executable(142-linked-list-cycle-ii LinkedList/142-linked-list-cycle-ii.cpp)
 add_executable(234-palindrome-linked-list LinkedList/234-palindrome-linked-list.cpp)
 add_executable(138-copy-list-with-random-pointer LinkedList/138-copy-list-with-random-pointer.cpp)
+
+add_executable(ShortestPath Graph/ShortestPath.cpp)
+add_executable(743-Network-Delay-Time Graph/743-Network-Delay-Time.cpp)
