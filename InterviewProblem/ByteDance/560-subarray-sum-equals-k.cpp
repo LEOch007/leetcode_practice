@@ -48,8 +48,10 @@ public:
         mp[0] = 1;
         for (int i = 0; i < nums.size(); ++i) {
             pre += nums[i];
-            if (mp.find(pre-k) != mp.end()) cnt++;
-            mp[pre] = 1;
+            if (mp.find(pre-k) != mp.end()) {
+                cnt += mp[pre-k];
+            }
+            mp[pre] ++;
         }
 
         return cnt;
