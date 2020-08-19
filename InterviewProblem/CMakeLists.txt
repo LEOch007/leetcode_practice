@@ -3,6 +3,7 @@ add_executable(41-first-missing-positive ByteDance/41-first-missing-positive.cpp
 add_executable(160-intersection-of-two-linked-lists ByteDance/160-intersection-of-two-linked-lists.cpp)
 add_executable(543-diameter-of-binarytree ByteDance/543-diameter-of-binarytree.cpp)
 add_executable(560-subarray-sum-equals-k ByteDance/560-subarray-sum-equals-k.cpp)
+add_executable(53-maximum-subarray ByteDance/53-maximum-subarray.cpp)
 
 add_executable(Problem1 Iflytek/Problem1.cpp)
 add_executable(Problem2 Iflytek/Problem2.cpp)
