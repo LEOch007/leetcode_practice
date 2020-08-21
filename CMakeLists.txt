@@ -3,12 +3,13 @@ project(leetcode_practice)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(leetcode_practice main.cpp)
-add_executable(28-strStr 28-strStr.cpp)
-add_executable(test test.cpp)
-add_executable(78-subset 78-subset.cpp)
+add_executable(leetcode_practice Miscellaneous/main.cpp)
+add_executable(28-strStr Miscellaneous/28-strStr.cpp)
+add_executable(test Miscellaneous/test.cpp)
+add_executable(78-subset Miscellaneous/78-subset.cpp)
 
 add_subdirectory(DataStructure)
 add_subdirectory(LeetcodeCard)
 add_subdirectory(InterviewProblem)
 add_subdirectory(BasicAlgorithm)
+add_subdirectory(KnowledgePlayGround)

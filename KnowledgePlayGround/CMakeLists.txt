@@ -1,0 +1,1 @@
+add_executable(Singleton DesignPattern/Singleton.cpp)
