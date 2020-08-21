@@ -23,7 +23,7 @@ public:
         return p_singleton;
     }
 };
-Singleton* Singleton::p_singleton;    // 静态成员变量 类外初始化
+Singleton* Singleton::p_singleton = new Singleton();    // 静态成员变量 类外初始化
 
 // 懒汉式
 class Singleton1{
@@ -44,7 +44,7 @@ public:
         return p_singleton1;
     }
 };
-Singleton1* Singleton1::p_singleton1;    // 静态成员变量 类外初始化
+Singleton1* Singleton1::p_singleton1 = nullptr;    // 静态成员变量 类外初始化
 mutex Singleton1::mux;
 
 int main(){
