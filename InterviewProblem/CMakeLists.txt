@@ -28,3 +28,5 @@ add_executable(CProblem2 Ctrip/CProblem2.cpp)
 add_executable(DProblem1 DJI/DProblem1.cpp)
 add_executable(DProblem2 DJI/DProblem2.cpp)
 add_executable(DProblem3 DJI/DProblem3.cpp)
+
+add_executable(Interview17-14-smallest-k-LCCI Alibaba/Interview17-14-smallest-k-LCCI.cpp)

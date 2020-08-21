@@ -17,8 +17,7 @@ vector<int> getNext(string s){
     for (int i = 1; i < s.size(); ++i) {
         int tmp = nxt[i-1];
         while (tmp>=1 && s[i]!=s[tmp]) tmp = nxt[tmp-1];
-        if (s[i]==s[tmp])
-            tmp++;
+        if (s[i]==s[tmp]) tmp++;
         nxt[i] = tmp;
     }
     return nxt;
