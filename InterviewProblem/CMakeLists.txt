@@ -34,3 +34,4 @@ add_executable(Interview17-14-smallest-k-LCCI Alibaba/Interview17-14-smallest-k-
 add_executable(Yuan-Problem1 YuanFuDao/Yuan-Problem1.cpp)
 add_executable(Yuan-Problem2 YuanFuDao/Yuan-Problem2.cpp)
 add_executable(Yuan-Problem3 YuanFuDao/Yuan-Problem3.cpp)
+add_executable(545-boundary-of-binary-tree YuanFuDao/545-boundary-of-binary-tree.cpp)
