@@ -35,3 +35,7 @@ add_executable(Yuan-Problem1 YuanFuDao/Yuan-Problem1.cpp)
 add_executable(Yuan-Problem2 YuanFuDao/Yuan-Problem2.cpp)
 add_executable(Yuan-Problem3 YuanFuDao/Yuan-Problem3.cpp)
 add_executable(545-boundary-of-binary-tree YuanFuDao/545-boundary-of-binary-tree.cpp)
+add_executable(POJ1050-to-the-max YuanFuDao/POJ1050-to-the-max.cpp)
+
+add_executable(Shen-Problem1 ShenXinFu/Shen-Problem1.cpp)
+add_executable(Shen-Problem2 ShenXinFu/Shen-Problem2.cpp)
