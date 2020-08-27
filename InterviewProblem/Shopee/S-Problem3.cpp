@@ -6,6 +6,11 @@
 #include <map>
 using namespace std;
 
+/*
+ * 给定一个字符串，找到两个子串，要求这俩个子串不能有相同的字母（没有交集），求这俩个子串长度之积的最大值
+ *
+ */
+
 // UnSure
 
 class Solution {

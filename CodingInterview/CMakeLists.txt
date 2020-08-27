@@ -1,0 +1,1 @@
+add_executable(Jian-42-max-sum-of-continous-subarray Jian-42-max-sum-of-continous-subarray.cpp)
