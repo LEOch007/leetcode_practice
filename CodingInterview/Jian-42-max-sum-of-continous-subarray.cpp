@@ -67,7 +67,7 @@ public:
  *
  * 连续子数组的最大和是一道经典题：
  *
- * 可应用Kadane算法：（基于动态规划思想，四要素）
+ * 1. 可应用Kadane算法：（基于动态规划思想，四要素）
  * - 状态dp[i]：表示以nums[i]结尾的连续子数组的最大值
  * - 转移方程：dp[i] = nums[i] + max(dp[i-1],0)
  *           表明dp[i]肯定要纳入结尾的nums[i]，是否要纳入之前的数据，取绝于之前的最大和是否大于0
@@ -77,4 +77,9 @@ public:
  * 可将上述过程简化为两个变量，
  * - 用pre_max保存dp[i-1]，更新dp[i]；
  * - 用global_max时刻更新全局最大值
+ *
+ * 2. 可利用前缀和
+ * - 找到 prex[i]-prex[j-1] && i>=j-1 的最大值 即为该问题要求的最大值
+ * 具体参考 Leetcode53题:(本工程文档下)
+ * InterviewProblem/ByteDance/53-maximum-subarray.cpp
  */

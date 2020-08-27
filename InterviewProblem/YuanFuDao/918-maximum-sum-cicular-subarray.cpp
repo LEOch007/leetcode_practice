@@ -50,11 +50,71 @@
 
 #include <iostream>
 #include <vector>
+#include <deque>
 using namespace std;
 
 class Solution {
 public:
-    int maxSubarraySumCircular(vector<int>& A) {
-        
+    // 前缀和 + 单调队列
+    // O(n)时间复杂度 O(n)空间复杂度
+    int maxSubarraySumCircular0(vector<int>& A) {
+        if (A.size() == 1) return A[0];
+
+        int N = A.size();
+        // 求前缀和
+        vector<int> prex(2*N+1);
+        prex[0] = 0;
+        for (int i = 1; i < prex.size(); ++i) {
+            prex[i] = prex[i-1] + A[(i-1)%N];
+        }
+
+        // 利用单调队列得到prex[j]的最小值 且要满足 i-j<=N
+        deque<int> dq_idx;
+        dq_idx.push_front(0);
+        int global_max = INT_MIN;
+        for (int i = 1; i < prex.size(); ++i) {
+            // j需要满足 i-j<=N
+            while (i - dq_idx.front() > N){ dq_idx.pop_front(); }
+
+            int curr_max = prex[i] - prex[dq_idx.front()];
+            global_max = max(global_max, curr_max);
+
+            // 保证deque队头的索引对应的是最小值
+            while (!dq_idx.empty() && prex[i]<=prex[dq_idx.back()]){
+                dq_idx.pop_back();
+            }
+            dq_idx.push_back(i);
+        }
+        return global_max;
+    }
+
+    int Kadane(vector<int> &A, int start, int end, const int sign){
+        int prev_max = sign*A[start];
+        int global_max = prev_max;
+        for (int i = start+1; i <= end; ++i) {
+            prev_max = sign*A[i] + max(prev_max,0);
+            global_max = max(global_max, prev_max);
+        }
+        return global_max;
+    }
+
+    // 利用Kadane算法 + 正负号
+    int maxSubarraySumCircular(vector<int>& A){
+        if (A.size() == 1) return A[0];
+
+        int N = A.size();
+        // 单区间
+        int ans1 = Kadane(A,0,N-1,1);
+
+        // 双区间: 注意要保证子数组非空
+        int sumA = 0;
+        for (int i = 0; i < N; ++i) {
+            sumA += A[i];
+        }
+        int ans2 = sumA + Kadane(A, 0, N-2, -1);
+        int ans3 = sumA + Kadane(A, 1, N-1, -1);
+
+        int global_max = max(ans1, max(ans2, ans3));
+        return global_max;
     }
 };
