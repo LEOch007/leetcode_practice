@@ -16,18 +16,5 @@ struct S{
 };
 
 int main(){
-    cout<<"size: "<<sizeof(S)<<endl;
 
-    string str1 = "abcd";
-    int mid = str1.size()/2;
-    string s1(str1.begin(),str1.begin()+mid);
-    string ss1(str1.begin()+mid,str1.end());
-
-    cout<<s1<<endl;
-    cout<<ss1<<endl;
-
-    bool a = true;
-    bool b = false;
-    bool c = a||b;
-    cout<<c;
 }
