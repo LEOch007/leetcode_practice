@@ -48,3 +48,8 @@ add_executable(S-Problem2 Shopee/S-Problem2.cpp)
 add_executable(S-Problem3 Shopee/S-Problem3.cpp)
 add_executable(1299-Replace-Elements-with-Greatest-Element-on-Right-Side Shopee/1299-Replace-Elements-with-Greatest-Element-on-Right-Side.cpp)
 add_executable(405-Convert-a-Number-to-Hexadecimal Shopee/405-Convert-a-Number-to-Hexadecimal.cpp)
+
+add_executable(P-Problem1 PDD/P-Problem1.cpp)
+add_executable(P-Problem2 PDD/P-Problem2.cpp)
+add_executable(P-Problem3 PDD/P-Problem3.cpp)
+add_executable(P-Problem4 PDD/P-Problem4.cpp)
