@@ -26,4 +26,6 @@ int main(){
 
     float f = abs((stof(s1)-stof(snum1)));
     cout<<f<<endl;
+
+    cout<<0xF<<endl;
 }
