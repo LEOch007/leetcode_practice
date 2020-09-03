@@ -17,9 +17,19 @@ struct S{
 };
 
 int main(){
-    int M,N;
-    char tmp;
-    cin>>M>>tmp>>N;
+    int T; cin>>T;
+    while (T--) {
+        int n, m;
+        cin >> n >> m;
+        vector<int> ppl(n);
+        vector<int> jobs(m);
+        for (int i = 0; i < n; ++i) {
+            cin >> ppl[i];
+        }
+        for (int i = 0; i < m; ++i) {
+            cin >> jobs[i];
+        }
 
-    cout<<M<<" "<<tmp<<" "<<N<<" ";
+        for(auto job:jobs)cout<<job<<" ";
+    }
 }

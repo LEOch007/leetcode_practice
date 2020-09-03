@@ -57,3 +57,7 @@ add_executable(P-Problem4 PDD/P-Problem4.cpp)
 add_executable(H-Problem1 Huawei/H-Problem1.cpp)
 add_executable(H-Problem2 Huawei/H-Problem2.cpp)
 add_executable(H-Problem3 Huawei/H-Problem3.cpp)
+
+add_executable(B-Problem1 Baidu/B-Problem1.cpp)
+add_executable(B-Problem2 Baidu/B-Problem2.cpp)
+add_executable(B-Problem3 Baidu/B-Problem3.cpp)
