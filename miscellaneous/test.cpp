@@ -16,18 +16,19 @@ struct S{
     float f2;
 };
 
-int main(){
-    string data = "-100,$,200";
-    string sval;
-    int i;
-    for (i = 5; i < data.size(); ++i) {
-        if (data[i] == ','){
-            sval = data.substr(5,i-5);
-            break;
-        }
+bool cmp(string a, string b){
+    bool ans;
+    if (a.size() < b.size()){ ans = true; }
+    else if (a.size() > b.size()){ ans = false; }
+    else {
+        ans = a < b;
     }
-    i++;
-    cout<<sval<<endl;
-    cout<<i<<endl;
-    cout<<data.substr(5,6)<<endl;
+    return ans;
+}
+
+int main(){
+
+    string str;
+    getline(cin,str);
+    cout<<str<<endl;
 }

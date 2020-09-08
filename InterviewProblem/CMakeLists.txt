@@ -30,6 +30,8 @@ add_executable(DProblem2 DJI/DProblem2.cpp)
 add_executable(DProblem3 DJI/DProblem3.cpp)
 
 add_executable(Interview17-14-smallest-k-LCCI Alibaba/Interview17-14-smallest-k-LCCI.cpp)
+add_executable(A-Problem1 Alibaba/A-Problem1.cpp)
+add_executable(A-Problem2 Alibaba/A-Problem2.cpp)
 
 add_executable(Yuan-Problem1 YuanFuDao/Yuan-Problem1.cpp)
 add_executable(Yuan-Problem2 YuanFuDao/Yuan-Problem2.cpp)
