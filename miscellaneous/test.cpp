@@ -16,19 +16,10 @@ struct S{
     float f2;
 };
 
-bool cmp(string a, string b){
-    bool ans;
-    if (a.size() < b.size()){ ans = true; }
-    else if (a.size() > b.size()){ ans = false; }
-    else {
-        ans = a < b;
-    }
-    return ans;
-}
-
 int main(){
-
     string str;
+    cin.ignore();
     getline(cin,str);
     cout<<str<<endl;
+
 }

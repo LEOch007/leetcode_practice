@@ -7,3 +7,5 @@ add_executable(symmetricTree BTree/symmetricTree.cpp)
 add_executable(pathSum BTree/pathSum.cpp)
 
 add_executable(T-sum-of-two-numbers Tencent/T-sum-of-two-numbers.cpp)
+
+add_subdirectory(DP)
