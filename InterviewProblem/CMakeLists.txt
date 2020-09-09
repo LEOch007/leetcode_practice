@@ -56,6 +56,7 @@ add_executable(P-Problem2 PDD/P-Problem2.cpp)
 add_executable(P-Problem3 PDD/P-Problem3.cpp)
 add_executable(P-Problem4 PDD/P-Problem4.cpp)
 add_executable(152-maximum-product-subarray PDD/152-maximum-product-subarray.cpp)
+add_executable(668-Kth-Smallest-Number-in-Multiplication-Table PDD/668-Kth-Smallest-Number-in-Multiplication-Table.cpp)
 
 add_executable(H-Problem1 Huawei/H-Problem1.cpp)
 add_executable(H-Problem2 Huawei/H-Problem2.cpp)
