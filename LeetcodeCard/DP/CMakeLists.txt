@@ -1,2 +1,3 @@
 add_executable(Sequence_Key LinearDP/Single-Sequence/Sequence_Key.cpp)
 add_executable(300-Longest-Increasing-Subsequence LinearDP/Single-Sequence/300-Longest-Increasing-Subsequence.cpp)
+add_executable(673-Number-of-Longest-Increasing-Subsequence LinearDP/Single-Sequence/673-Number-of-Longest-Increasing-Subsequence.cpp)
