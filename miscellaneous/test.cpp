@@ -8,6 +8,7 @@
 #include <zconf.h>
 #include <string>
 #include <cmath>
+#include <algorithm>
 using namespace std;
 
 struct S{
@@ -17,9 +18,14 @@ struct S{
 };
 
 int main(){
+    /*
     string str;
     cin.ignore();
     getline(cin,str);
     cout<<str<<endl;
+     */
 
+    vector<int> arr = {12,12,13,14,19};
+    auto idx = lower_bound(arr.begin(), arr.end(),21);
+    cout<<idx-arr.begin()<<endl;
 }

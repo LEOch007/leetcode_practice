@@ -21,6 +21,7 @@
  */
 
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 class Solution {
@@ -75,7 +76,7 @@ public:
         arr[idx] = num;
     }
 
-    int lengthOfLIS(vector<int>& nums){
+    int lengthOfLIS1(vector<int>& nums){
         if (nums.size() == 0) return 0;
 
         vector<int> arr = {nums[0]};    // 上升序列
@@ -87,6 +88,28 @@ public:
         }
 
         return arr.size();
+    }
+
+    // O(nlogn) 运用库函数
+    int lengthOfLIS(vector<int>& nums){
+        if (nums.size() <= 1) return nums.size();
+
+        vector<int> arr = {nums[0]};
+        int len = 1;
+        for (int i = 1; i < nums.size(); ++i) {
+            auto iter = lower_bound(arr.begin(), arr.begin()+len, nums[i]);
+            int idx = iter - arr.begin();
+
+            if (idx==len){
+                arr.push_back(nums[i]);
+                len++;
+            }
+            else{
+                arr[idx] = nums[i];
+            }
+        }
+
+        return len;
     }
 };
 
