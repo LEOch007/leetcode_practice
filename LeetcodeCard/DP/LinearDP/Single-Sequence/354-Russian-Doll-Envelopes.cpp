@@ -28,6 +28,7 @@ using namespace std;
 
 class Solution {
 public:
+    // O(n^2) 有更佳的方法 引入二分查找
     static bool cmp(vector<int> a, vector<int> b){
         bool ans;
         if (a[0]<b[0]) ans = true;
@@ -39,7 +40,7 @@ public:
         return ans;
     }
 
-    int maxEnvelopes(vector<vector<int>>& envelopes) {
+    int maxEnvelopes0(vector<vector<int>>& envelopes) {
         if (envelopes.size() <= 1) return envelopes.size();
 
         sort(envelopes.begin(), envelopes.end(), cmp);
@@ -63,4 +64,41 @@ public:
         }
         return ans;
     }
+
+    // O(nlogn) 引入二分查找 优化LIS问题
+    static bool cmp2(vector<int> a, vector<int> b){
+        bool ans;
+        // a[0]小的在前; 相等的话 a[1]大的在前
+        if (a[0]<b[0]) ans = true;
+        else if (a[0]>b[0]) ans = false;
+        else if (a[1]>b[1]) ans = true;
+        else ans = false;
+
+        return ans;
+    }
+
+    int maxEnvelopes(vector<vector<int>>& envelopes) {
+        if (envelopes.size() <= 1) return envelopes.size();
+
+        // 转化为一维的LIS问题
+        sort(envelopes.begin(), envelopes.end(), cmp2);
+
+        // 引入二分查找 优化LIS问题的时间复杂度
+        vector<int> LIS = {envelopes[0][1]};
+        for (int i = 1; i < envelopes.size(); ++i) {
+            auto iter = lower_bound(LIS.begin(), LIS.begin()+LIS.size(), envelopes[i][1]);
+            int idx = iter-LIS.begin();
+
+            if (idx==LIS.size()) LIS.push_back(envelopes[i][1]);
+            else LIS[idx] = envelopes[i][1];
+        }
+
+        return LIS.size();
+    }
 };
+
+/*
+ * Note:
+ *
+ * 关键在于通过sort排序 将二维的问题 转化为 熟悉的一维LIS问题
+ */
