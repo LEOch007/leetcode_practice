@@ -66,3 +66,8 @@ add_executable(H-Problem3 Huawei/H-Problem3.cpp)
 add_executable(B-Problem1 Baidu/B-Problem1.cpp)
 add_executable(B-Problem2 Baidu/B-Problem2.cpp)
 add_executable(B-Problem3 Baidu/B-Problem3.cpp)
+
+add_executable(N-Problem1 NetEase/N-Problem1.cpp)
+add_executable(N-Problem2 NetEase/N-Problem2.cpp)
+add_executable(N-Problem3 NetEase/N-Problem3.cpp)
+add_executable(N-Problem4 NetEase/N-Problem4.cpp)

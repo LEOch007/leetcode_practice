@@ -25,7 +25,11 @@ int main(){
     cout<<str<<endl;
      */
 
-    vector<int> arr = {12,12,13,14,19};
-    auto idx = lower_bound(arr.begin(), arr.end(),21);
-    cout<<idx-arr.begin()<<endl;
+//    vector<int> arr = {12,12,13,14,19};
+//    auto idx = lower_bound(arr.begin(), arr.end(),21);
+//    cout<<idx-arr.begin()<<endl;
+
+    string s = "3245572911";
+    sort(s.begin(),s.end(),greater<char>());
+    cout<<s<<endl;
 }
