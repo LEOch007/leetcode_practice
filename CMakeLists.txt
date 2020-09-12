@@ -14,5 +14,3 @@ add_subdirectory(InterviewProblem)
 add_subdirectory(BasicAlgorithm)
 add_subdirectory(KnowledgePlayGround)
 add_subdirectory(CodingInterview)
-
-add_executable(test1 test1.cpp)

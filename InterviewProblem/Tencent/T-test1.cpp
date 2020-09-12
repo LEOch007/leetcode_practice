@@ -7,6 +7,7 @@
 #include <unordered_map>
 using namespace std;
 
+// 两数之和
 vector<int> func(vector<int> nums, int target){
     vector<int> ans = {};
     unordered_map<int,int> mp;
@@ -20,6 +21,7 @@ vector<int> func(vector<int> nums, int target){
     return ans;
 }
 
+// 每日股票价格 不可单日买卖 求最大收益
 int func1(vector<int>& arr){
     if (arr.empty()) return 0;
     if (arr.size()==1) return 0;
