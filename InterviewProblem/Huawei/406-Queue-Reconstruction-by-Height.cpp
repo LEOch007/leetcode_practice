@@ -21,6 +21,7 @@
 链接：https://leetcode-cn.com/problems/queue-reconstruction-by-height
  */
 
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -42,13 +43,21 @@ public:
 
         vector<vector<int>> result;
         for (int i = 0; i < people.size(); ++i) {
-            auto iter = people.begin()+people[i][1];
+            auto iter = result.begin()+people[i][1];
             result.insert(iter,people[i]);
         }
 
         return result;
     }
 };
+
+int main(){
+    vector<vector<int>> people = {{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
+
+    Solution s;
+    vector<vector<int>> result = s.reconstructQueue(people);
+    for(auto re:result) cout<<"["<<re[0]<<","<<re[1]<<"]  ";
+}
 
 /*
  * Note:
