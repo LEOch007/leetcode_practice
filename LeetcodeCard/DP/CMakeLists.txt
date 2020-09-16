@@ -4,3 +4,4 @@ add_executable(673-Number-of-Longest-Increasing-Subsequence LinearDP/Single-Sequ
 add_executable(354-Russian-Doll-Envelopes LinearDP/Single-Sequence/354-Russian-Doll-Envelopes.cpp)
 add_executable(53-Maximum-Subarray LinearDP/Single-Sequence/53-Maximum-Subarray.cpp)
 add_executable(918-Maximum-Sum-Circular-Subarray LinearDP/Single-Sequence/918-Maximum-Sum-Circular-Subarray.cpp)
+add_executable(IV17-24-Max-Submatrix LinearDP/Single-Sequence/IV17-24-Max-Submatrix.cpp)
