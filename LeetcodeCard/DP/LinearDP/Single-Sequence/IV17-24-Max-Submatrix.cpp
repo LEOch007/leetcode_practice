@@ -35,7 +35,7 @@ class Solution {
 public:
     // 一维数组: 找到最大的连续子数组和 所在区间
     vector<int> getMaxRange(vector<int>& nums){
-        if (nums.size()==1) return {0,0};
+        if (nums.size()==1) return {0,0, nums[0]};
 
         vector<int> prex(nums.size());
         prex[0] = nums[0];
@@ -120,8 +120,15 @@ public:
 
 int main(){
     vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
+    vector<vector<int>> matrix = {{1},{-7}};
 
     Solution s;
-    vector<int> re = s.getMaxRange(nums);
+    vector<int> re = s.getMaxMatrix(matrix);
     for(auto r:re) cout<<r<<" ";
 }
+
+/*
+ * Note:
+ *
+ * 将二维子矩阵问题 转化为 一维子序列问题
+ */
