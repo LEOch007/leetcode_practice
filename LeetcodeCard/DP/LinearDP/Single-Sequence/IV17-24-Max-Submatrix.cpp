@@ -27,6 +27,7 @@
 链接：https://leetcode-cn.com/problems/max-submatrix-lcci
  */
 
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -42,12 +43,13 @@ public:
             prex[i] = prex[i-1]+nums[i];
         }
 
-        int global_max = INT_MIN;
-        int min_v = 0; int min_v_id = -1;
         int max_idx = 0;
         int min_idx = 0;
+
+        int global_max = INT_MIN;
+        int min_v = 0; int min_v_id = -1;
         for (int i = 0; i < prex.size(); ++i) {
-            if (global_max < prex[i]-min_v){
+            if (prex[i]-min_v > global_max){
                 global_max = prex[i]-min_v;
                 max_idx = i;
                 min_idx = min_v_id+1;
@@ -115,3 +117,11 @@ public:
         return {min_rid, min_cid, max_rid, max_cid};
     }
 };
+
+int main(){
+    vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
+
+    Solution s;
+    vector<int> re = s.getMaxRange(nums);
+    for(auto r:re) cout<<r<<" ";
+}

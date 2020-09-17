@@ -80,3 +80,8 @@ add_executable(NN-Problem3 NetEase/NN-Problem3.cpp)
 add_executable(NN-Problem4 NetEase/NN-Problem4.cpp)
 
 add_executable(T-test1 Tencent/T-test1.cpp)
+
+add_executable(J-Problem1 JingDong/J-Problem1.cpp)
+add_executable(J-Problem2 JingDong/J-Problem2.cpp)
+add_executable(J-Problem3 JingDong/J-Problem3.cpp)
+add_executable(J-Problem4 JingDong/J-Problem4.cpp)
