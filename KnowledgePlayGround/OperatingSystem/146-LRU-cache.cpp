@@ -46,16 +46,14 @@ private:
     list<pair<int,int>> recent_list;                         // (key, value)
     unordered_map<int,list<pair<int,int>> ::iterator> mp;    // key : pos
 public:
-    LRUCache(int capacity) {
-        m_capacity = capacity;
-    }
+    LRUCache(int capacity):m_capacity(capacity) { }
 
     int get(int key) {
         if (mp.find(key) == mp.end()) return -1;
 
-        auto pos = mp[key];
-        put(key,pos->second);
-        return pos->second;
+        int val = mp[key]->second;
+        put(key,val);
+        return val;
     }
 
     void put(int key, int value) {
@@ -92,3 +90,9 @@ int main(){
     cout<<cache.get(3)<<endl;
     cout<<cache.get(4)<<endl;
 }
+
+/*
+ * Note:
+ *
+ * 注意在get访问时，若数据存在，需要将其删掉，再重新插入链表头部 （因为其是最近访问的数据
+ */
