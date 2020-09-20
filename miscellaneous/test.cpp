@@ -17,6 +17,17 @@ struct S{
     float f2;
 };
 
+class S0{
+private:
+    int i;
+    virtual void method(){};
+};
+
+class S1: public S0{
+private:
+    char ch;
+};
+
 int main(){
     /*
     string str;
@@ -29,7 +40,10 @@ int main(){
 //    auto idx = lower_bound(arr.begin(), arr.end(),21);
 //    cout<<idx-arr.begin()<<endl;
 
-    string s = "3245572911";
-    sort(s.begin(),s.end(),greater<char>());
-    cout<<s<<endl;
+//    string s = "3245572911";
+//    sort(s.begin(),s.end(),greater<char>());
+//    cout<<s<<endl;
+
+    cout<<sizeof(S0)<<endl;
+    cout<<sizeof(S1)<<endl;
 }
