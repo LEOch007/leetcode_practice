@@ -2,6 +2,10 @@
 // Created by linjliang on 2020/9/17.
 //
 
+/*
+ * 并查集
+ */
+
 // Sure
 
 #include <iostream>

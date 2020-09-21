@@ -2,6 +2,10 @@
 // Created by linjliang on 2020/9/17.
 //
 
+/*
+ * 多重背包问题
+ */
+
 // Sure
 
 #include <iostream>

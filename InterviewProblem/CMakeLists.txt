@@ -87,3 +87,8 @@ add_executable(J-Problem2 JingDong/J-Problem2.cpp)
 add_executable(PA-Problem1 PingAn/PA-Problem1.cpp)
 add_executable(PA-Problem2 PingAn/PA-Problem2.cpp)
 add_executable(18-4Sum PingAn/18-4Sum.cpp)
+
+add_executable(V-Problem1 VMware/V-Problem1.cpp)
+add_executable(V-Problem2 VMware/V-Problem2.cpp)
+add_executable(V-Problem3 VMware/V-Problem3.cpp)
+add_executable(V-Problem4 VMware/V-Problem4.cpp)
