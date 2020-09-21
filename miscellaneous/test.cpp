@@ -44,6 +44,10 @@ int main(){
 //    sort(s.begin(),s.end(),greater<char>());
 //    cout<<s<<endl;
 
-    cout<<sizeof(S0)<<endl;
-    cout<<sizeof(S1)<<endl;
+//    cout<<sizeof(S0)<<endl;
+//    cout<<sizeof(S1)<<endl;
+
+    double x = 2.5;
+    double y = 3.338889;
+    printf("%.2f %.2f",x,y);
 }
