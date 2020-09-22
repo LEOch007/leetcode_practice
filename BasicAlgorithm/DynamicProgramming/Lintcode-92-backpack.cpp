@@ -35,7 +35,7 @@ public:
      * @return: The maximum size
      */
 
-    // O(n^2) space
+    // O(n*m) space
     int backPack0(int m, vector<int> &A) {
         // state
         const int n = A.size();
@@ -60,7 +60,7 @@ public:
         return dp[n][m];
     }
 
-    // O(n) space
+    // O(m) space
     int backPack(int m, vector<int> &A) {
         // state
         const int n = A.size();
