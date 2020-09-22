@@ -34,7 +34,9 @@ public:
      * @param A: Given n items with size A[i]
      * @return: The maximum size
      */
-    int backPack(int m, vector<int> &A) {
+
+    // O(n^2) space
+    int backPack0(int m, vector<int> &A) {
         // state
         const int n = A.size();
         vector<vector<int>> dp(n+1,vector<int>(m+1));
@@ -57,6 +59,24 @@ public:
         // answer
         return dp[n][m];
     }
+
+    // O(n) space
+    int backPack(int m, vector<int> &A) {
+        // state
+        const int n = A.size();
+        vector<int> dp(m+1);
+        // init
+        fill(dp.begin(), dp.end(), 0);
+
+        // function
+        for (int i = 0; i < n; ++i) {
+            for (int j = m; j >= A[i]; --j) {
+                dp[j] = max(dp[j], dp[j-A[i]]+A[i]);
+            }
+        }
+        // answer
+        return dp[m];
+    }
 };
 
 int main(){
@@ -66,3 +86,11 @@ int main(){
     Solution s;
     cout<<s.backPack(m,nums)<<endl;
 }
+
+/*
+ * Note:
+ *
+ * 通过倒序遍历容量，可以将状态从二维压缩到一维，降低空间复杂度；
+ * 当前状态只依赖于前面的状态，倒序遍历可以使得前面状态依然是上一轮次的，即上一轮次更新本轮次，
+ * 故而原本二维表示轮次的那一维度（表示不同物品的那一维度）可以被压缩掉
+ */
