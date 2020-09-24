@@ -91,4 +91,7 @@ add_executable(18-4Sum PingAn/18-4Sum.cpp)
 add_executable(V-Problem1 VMware/V-Problem1.cpp)
 add_executable(V-Problem2 VMware/V-Problem2.cpp)
 add_executable(V-Problem3 VMware/V-Problem3.cpp)
-add_executable(V-Problem4 VMware/V-Problem4.cpp)
+
+add_executable(e-Problem1 eBay/e-Problem1.cpp)
+add_executable(e-Problem2 eBay/e-Problem2.cpp)
+add_executable(e-Problem3 eBay/e-Problem3.cpp)
