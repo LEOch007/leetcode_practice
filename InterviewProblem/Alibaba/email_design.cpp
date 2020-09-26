@@ -131,7 +131,7 @@ public:
         if (e.send_time>=begin && e.send_time<=end) return true;
         else return false;
     }
-}
+};
 
 // 若还有新的条件需求 增加子类继承抽象类SearchCondition 重写condition函数即可
 
