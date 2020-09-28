@@ -100,3 +100,5 @@ add_executable(V-Problem3 VMware/V-Problem3.cpp)
 add_executable(e-Problem1 eBay/e-Problem1.cpp)
 add_executable(e-Problem2 eBay/e-Problem2.cpp)
 add_executable(e-Problem3 eBay/e-Problem3.cpp)
+
+add_executable(862-Shortest-Subarray-with-Sum-at-Least-K KuaiShou/862-Shortest-Subarray-with-Sum-at-Least-K.cpp)
