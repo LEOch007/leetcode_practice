@@ -36,7 +36,8 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode* sortList(ListNode* head) {
+    // 归并排序
+    ListNode* sortList0(ListNode* head) {
         return mergeSort(head);
     }
 
@@ -85,6 +86,11 @@ public:
 
         ListNode* head = mergeTwoLists(first,second);
         return head;
+    }
+
+    // 快速排序
+    ListNode* sortList(ListNode* head) {
+
     }
 };
 
